@@ -2,44 +2,44 @@
 	  var ref = new Wilddog("https://zzwdanmu.wilddogio.com/");
 	  var arr = [];
 	  //把数据提交到野狗云
-	  $(".s-sub").click(function() {
-	    var text = $(".s-txt").val();
+	  $(".s_sub").click(function() {
+	    var text = $(".s_txt").val();
 	    ref.child('message').push(text);
-	    $(".s-txt").val('');
+	    $(".s_txt").val('');
 	  });
 	  //响应按键点击事件
-	  $(".s-txt").keypress(function(event) {
+	  $(".s_txt").keypress(function(event) {
 	    if (event.keyCode == "13") {
-	      $(".s-sub").trigger('click');
+	      $(".s_sub").trigger('click');
 	    }
 	  });
 	  //响应按键清除事件
-	  $(".s-del").click(function() {
+	  $(".s_del").click(function() {
 	    ref.remove();
 	    arr = [];
-	    $('.dm-how').empty();
+	    $('.dm_how').empty();
 	  });
 	  //监听云端数据变更，云端数据变化，弹幕框里数据也跟着变化。
 	  ref.child('message').on('child_added', function(snapshot) {
 	    var text = snapshot.val();
 	    arr.push(text);
-	    var textObj = $("<div class=\"dm-message\"></div>");
+	    var textObj = $("<div class=\"dm_message\"></div>");
 	    textObj.text(text);
-	    $(".dm-show").append(textObj);
+	    $(".dm_show").append(textObj);
 	    moveObj(textObj);
 	  });
 
 	  ref.on('child_removed', function() {
 	    arr = [];
-	    $('.dm-show').empty();
+	    $('.dm_show').empty();
 	  });
 	  //按照时间规则显示弹幕内容。	
-	  var topMin = $('.dm-mask').offset().top;
-	  var topMax = topMin + $('.dm-mask').height();
+	  var topMin = $('.dm_mask').offset().top;
+	  var topMax = topMin + $('.dm_mask').height();
 	  var _top = topMin;
 
 	  var moveObj = function(obj) {
-	    var _left = $('.dm-mask').width() - obj.width();
+	    var _left = $('.dm_mask').width() - obj.width();
 	    _top = _top + 50;
 	    if (_top > (topMax - 50)) {
 	      _top = topMin;
@@ -67,7 +67,7 @@
 	    if (arr.length > 0) {
 	      var n = Math.floor(Math.random() * arr.length + 1) - 1;
 	      var textObj = $("<div>" + arr[n] + "</div>");
-	      $(".dm-show").append(textObj);
+	      $(".dm_show").append(textObj);
 	      moveObj(textObj);
 	    }
 
