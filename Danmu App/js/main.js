@@ -41,9 +41,8 @@
 	        if (snapshot.val() == null) {
 	            arr = [];
 	            $('.dm_show').empty();
-	        } else {	        	
+	        } else {//将单项数据从DOM中删除        	
 	            var text = snapshot.val();
-	                       
 	            arr.push(text);
 	            var textObj = $("<div class=\"dm_message\"></div>");
 	            textObj.text(text);
