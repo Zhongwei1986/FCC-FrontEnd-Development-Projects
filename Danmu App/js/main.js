@@ -15,17 +15,20 @@
 	    });
 	    //响应按键清除事件
 	    $(".s_del").click(function() {
-	        ref.remove();
+	        ref.set(null); //或者使用ref.remove()
 	        arr = [];
-	        $('.dm_how').empty();
+	        // $('.dm_show').empty();
 	    });
 	    //监听云端数据变更，云端数据变化，弹幕框里数据也跟着变化。
 	    ref.child('message').on('child_added', function(snapshot) {
 	        var text = snapshot.val();
+	        console.log(text);
 	        arr.push(text);
 	        var textObj = $("<div class=\"dm_message\"></div>");
 	        textObj.text(text);
 	        $(".dm_show").append(textObj);
+	        //等同
+	        // $(textObj).appendTo(".dm_show");
 	        moveObj(textObj);
 	    });
 
@@ -33,6 +36,21 @@
 	        arr = [];
 	        $('.dm_show').empty();
 	    });
+
+	    ref.child('message').on('child_removed', function(snapshot) {
+	        if (snapshot.val() == null) {
+	            arr = [];
+	            $('.dm_show').empty();
+	        } else {	        	
+	            var text = snapshot.val();
+	                       
+	            arr.push(text);
+	            var textObj = $("<div class=\"dm_message\"></div>");
+	            textObj.text(text);
+	            $(".dm_show").append(textObj);
+	        }
+	    })
+
 	    //按照时间规则显示弹幕内容。	
 	    var topMin = $('.dm_mask').offset().top;
 	    var topMax = topMin + $('.dm_mask').height();
