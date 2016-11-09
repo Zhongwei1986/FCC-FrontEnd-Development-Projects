@@ -1,5 +1,10 @@
 	$(document).ready(function() {
-	    var ref = new Wilddog("https://zzwdanmu.wilddogio.com/");
+	    var config = {
+	        authDomain: "zzwdanmu.wilddogio.com",
+	        syncURL: "https://zzwdanmu.wilddogio.com/"
+	    };
+	    wilddog.initializeApp(config);
+	    var ref = wilddog.sync().ref();
 	    var arr = [];
 	    //把数据提交到野狗云
 	    $(".s_sub").click(function() {
@@ -22,7 +27,6 @@
 	    //监听云端数据变更，云端数据变化，弹幕框里数据也跟着变化。
 	    ref.child('message').on('child_added', function(snapshot) {
 	        var text = snapshot.val();
-	        console.log(text);
 	        arr.push(text);
 	        var textObj = $("<div class=\"dm_message\"></div>");
 	        textObj.text(text);
@@ -38,16 +42,10 @@
 	    });
 
 	    ref.child('message').on('child_removed', function(snapshot) {
-	        if (snapshot.val() == null) {
-	            arr = [];
-	            $('.dm_show').empty();
-	        } else {//将单项数据从DOM中删除        	
-	            var text = snapshot.val();
-	            arr.push(text);
-	            var textObj = $("<div class=\"dm_message\"></div>");
-	            textObj.text(text);
-	            $(".dm_show").append(textObj);
-	        }
+	        var text = snapshot.val();
+	        var index = arr.indexOf(text);
+	        arr.splice(index, 1);
+	        $("div:contains(text)").remove();
 	    })
 
 	    //按照时间规则显示弹幕内容。	
@@ -66,7 +64,7 @@
 	            top: _top,
 	            color: getRandomColor()
 	        });
-	        var time = 20000 + 10000 * Math.random();
+	        var time = 10000 + 20000 * Math.random();
 	        obj.animate({
 	            left: "-" + _left + "px"
 	        }, time, function() {
