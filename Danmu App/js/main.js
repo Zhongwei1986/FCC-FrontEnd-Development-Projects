@@ -64,9 +64,9 @@
 	            top: _top,
 	            color: getRandomColor()
 	        });
-	        var time = 10000 + 20000 * Math.random();
+	        var time = 20000 + 15000 * Math.random();
 	        obj.animate({
-	            left: "-" + _left + "px"
+	            left: "-10px"
 	        }, time, function() {
 	            obj.remove();
 	        });
@@ -75,7 +75,7 @@
 	    var getRandomColor = function() {
 	        return '#' + (function(h) {
 	            return new Array(7 - h.length).join("0") + h
-	        })((Math.random() * 0x1000000 << 0).toString(16))
+	        })((Math.random() * 0x2000000 << 0).toString(16))
 	    }
 
 	    var getAndRun = function() {
@@ -86,7 +86,7 @@
 	            moveObj(textObj);
 	        }
 
-	        setTimeout(getAndRun, 3000);
+	        setTimeout(getAndRun, 4000);
 	    }
 
 	    jQuery.fx.interval = 50;
