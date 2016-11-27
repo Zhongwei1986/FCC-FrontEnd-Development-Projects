@@ -10,7 +10,7 @@
 
 [个人Blog关于FCC的简单介绍](http://wemi.tech/2016/10/11/FCC%E7%AE%97%E6%B3%95%E7%BC%96%E7%A8%8B%E9%A2%98%E7%9B%AE%E5%B0%8F%E8%AE%B0/)
 
-[TOC]
+
 
 ## 1. Build a Tribute Page - 创建一个致敬页面
 * [李宗伟](https://en.wikipedia.org/wiki/Lee_Chong_Wei)是我心目中世界上最伟大的羽毛球运动员，他技术高超，性格坚韧，但命运多舛，我为他制作了致敬页面。
