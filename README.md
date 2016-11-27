@@ -1,4 +1,4 @@
-# FreeCodeCamp FrontEnd Development Projects - FCC前端开发项目
+# FreeCodeCamp FrontEnd Development Projects
 
 >FreeCodeCamp 是什么?
 
