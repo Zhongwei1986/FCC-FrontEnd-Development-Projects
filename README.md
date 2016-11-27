@@ -17,7 +17,7 @@
 * 致敬页面请 [点击查看](https://codepen.io/Zhongwei1986/full/PzvGOy)。
 
 ## Design a danmu app - 设计一个弹幕APP
-* 对于此阶段的我来说此项目有点困难，最终[网页](https://codepen.io/Zhongwei1986/full/dXLBdr/)参(zhao)考(ban)了[官方源码](http://codepen.io/huluoyang/full/GZbBwL//)。
+* 对于初级阶段的我来说独立完成这个项目有点困难，在完全理解[官方源码](http://codepen.io/huluoyang/full/GZbBwL//)后，最终完(zhao)成(ban)[网页](https://codepen.io/Zhongwei1986/full/dXLBdr/)。
 * 计划后期重构此APP，参考douyuTv、acfun等网站增加新的弹幕功能，比如设置透明度，只显示某区域弹幕，完全屏蔽弹幕等。
 
 ## Build a Random Quote Machine - 创建名人名言随机生成器
