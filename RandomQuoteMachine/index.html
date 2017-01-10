@@ -8,34 +8,36 @@
     <title>Random Quote Machine</title>
     <meta name="description" content="This is a exercise for FCC">
     <meta name="keywords" content="Random Quote">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card" style="width: 20rem;">
-            <div class="m-quote card-block">
-                <p class="text-center">Random Quotes Here!</p>
-            </div>
+    <div class="container" style="width: 300px;">
+        <div class="m-quote">            
         </div>
-        <div class="card" style="width: 20rem;">
-            <div class="card-block">
-                - <span id="author">Author</span>
-            </div>
+        <div class="m-author text-right">
+            - <span id="author"></span>
         </div>
-        <div class="btns text">
-            <button class="btn btn-outline-primary" id="new-quote">New Quote</button>
-            <a class="btn btn-outline-secondary" herf="#" id="twitter" role="button">
+        <div class="btns">
+            <button class="btn btn-primary" id="new-quote">New Quote</button>
+            <a class="btn btn-info" id="twitter" role="button">
                 <i class="fa fa-twitter"></i>
             </a>
         </div>
-        <p class="text-center"> by <a href="http://codepen.io/zhongwei1986/">zhongwei</a></p>
-    	</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+        <div class="footer">
+            <p class="center-block"> by <a href="http://codepen.io/zhongwei1986/">zhongwei</a></p>
+        </div>
+    </div>
 </body>
 
 </html>
