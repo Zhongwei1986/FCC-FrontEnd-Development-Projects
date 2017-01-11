@@ -557,7 +557,30 @@ template {
 
 
 /*User CSS*/
+.btns a{   
+    float: right;
+    margin-right: 30px;
+}
+.btns button{       
+    margin-left: 30px;
+}
+.footer {
+    margin-left: 50%;    
+}
+.footer p {
+    margin-left: -25%;
+}
 
-.btns a {
-    margin-left: 100px;
+.container {
+    background-color: #e6e6e6;
+    border-radius: 10px; 
+    margin-top: 20%;
+}
+
+div {
+    margin-top: 20px;
+}
+
+.m-quote {
+    font-size: 18px;
 }
