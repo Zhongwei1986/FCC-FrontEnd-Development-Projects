@@ -4,7 +4,7 @@
 //I used an Free API,its url: https://market.mashape.com/andruxnet/random-famous-quotes 
 function getQuote() {
     //make an ajax request,then append content to related elements
-    $.ajax({        
+    $.ajax({
         url: "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies",
         contentType: "application/x-www-form-urlencoded",
         method: "POST",
@@ -21,19 +21,23 @@ function getQuote() {
     });
 }
 
+
+
+
 //Initial the page when doucument ready
 
-$(document).ready(function() {
-    getQuote();
-});
-
-//Add event listener to the button "New Quote"
-
-$("#new-quote").click(function(e) {
-    
-});
-
-//Share the quote to Twitter
-$("#twitter").click(function() {
-    // body...
+$().ready(function() {
+    getQuote();    
+    //Add event listener to the button "New Quote"
+    $("#new-quote").click(function() {        
+        getQuote();        
+    });
+    //Share the quote to Twitter
+    $("#twitter").click(function() {            
+        var content = $(".m-quote").text();   
+        var author =  $("#author").text();            
+        var herf = "https://twitter.com/intent/tweet?text="+ "\“" +content + "\”" + " FROM "+ author +      
+                    "  SHARE BY @zhongweizhou" ;
+        window.open(herf,"_blank","height = 500, width =611,status = yes");
+    });
 });
