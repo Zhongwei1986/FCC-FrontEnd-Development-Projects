@@ -1,0 +1,22 @@
+{
+  "name": "LocalWeather",
+  "homepage": "wemi.tech",
+  "authors": [
+    "Zhongwei1986 <zhouzhongwei1986@sina.com>"
+  ],
+  "description": "weather application with Free Code Camp",
+  "main": "index.html",
+  "keywords": [
+    "weather",
+    "fcc"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
