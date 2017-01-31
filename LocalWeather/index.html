@@ -10,8 +10,8 @@
     <title>Simple Weather App</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,11 +20,34 @@
     <![endif]-->
   </head>
   <body>
-    <h1>你好，世界！</h1>
+    <div class="wraper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <form action="" class="text-center" method="get">
+              <div class="form-group">
+                <lable class="sr-only" for="help-search">查找</lable>
+                <input type="text" class="form-control border-color col-sm-12" placeholder="城市名字">
+              </div>
+              <button class="btn btn-orange">
+                <i class="fa fa-question-circle"></i>
+                "Search"
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="widgets">
+          <h2 class="text-color widgets_header"> 当前天气和天气预报 </h2>
+          <div class="row">
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
