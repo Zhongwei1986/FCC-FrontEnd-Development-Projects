@@ -1,53 +1,151 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
+
+<head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A Weather App designed for FCC FrontEnd Project">
     <meta name="keywords" content="Weather FCC">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Simple Weather App</title>
-
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wraper">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <form action="" class="text-center" method="get">
-              <div class="form-group">
-                <lable class="sr-only" for="help-search">查找</lable>
-                <input type="text" class="form-control border-color col-sm-12" placeholder="城市名字">
-              </div>
-              <button class="btn btn-orange">
-                <i class="fa fa-question-circle"></i>
-                "Search"
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="widgets">
-          <h2 class="text-color widgets_header"> 当前天气和天气预报 </h2>
-          <div class="row">
-            
-          </div>
-        </div>
-      </div>
-    </div>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
 
+<body>
+    <div class="wraper">
+        <div class="container" style="width: 500px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form action="" class="text-center" method="get">
+                        <div class="form-group">
+                            <lable class="sr-only" for="help-search">查找</lable>
+                            <input type="text" class="form-control border-color col-sm-12" placeholder="城市名字">
+                        </div>
+                        <button class="btn btn-orange">
+                            <i class="fa fa-question-circle"></i>
+                            <span>查找</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="widgets">
+                <h2 class="text-center"><span class="city">武汉</span>实时天气及预报 </h2>
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#current" aria-controls="current" role="tab" data-toggle="tab">当前天气</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今天天气</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="current">
+                        <table id="currentWeather">
+                            <tbody>
+                                <tr>
+                                    <td>温度：</td>
+                                    <td class="temp"></td>
+                                </tr>
+                                <tr>
+                                    <td>风向：</td>
+                                    <td class="wind_direction"></td>
+                                </tr>
+                                <tr>
+                                    <td>风力：</td>
+                                    <td class="wind_strength"></td>
+                                </tr>
+                                <tr>
+                                    <td>湿度：</td>
+                                    <td class="humidity"></td>
+                                </tr>
+                                <tr>
+                                    <td>更新时间：</td>
+                                    <td class="time"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="today">
+                        <table class="todayWeather">
+                            <tbody>
+                                <tr>
+                                    <td>日期</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>星期</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>温度</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>今日天气</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>风向</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>穿衣指数</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>穿衣建议</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>紫外线强度</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>舒适度指数</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>洗车指数</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>旅游指数</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>晨练指数</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>干燥指数</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="future"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
+</body>
+
 </html>
