@@ -1,0 +1,58 @@
+/* Fix user-agent */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+input {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    word-wrap: break-word;
+}
+
+div,
+h2,
+h3,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*div.wraper*/
+.wraper {
+    height: 100%; 
+}
+/*div.container*/
+div.container {
+    margin-top: 50px;    
+}
+
+input#help-search {
+    width: 100%;
+}
+
+.widgets h3{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.tab-content {
+    margin-top: 25px;
+}

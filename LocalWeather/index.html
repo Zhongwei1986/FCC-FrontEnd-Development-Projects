@@ -11,53 +11,40 @@
     <title>Simple Weather App</title>
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">    
+    <link rel="stylesheet" href="main.css">   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <![endif]-->
 </head>
 
 <body>
     <div class="wraper">
-        <div class="container" style="width: 500px">
-            <div class="row">
-                <div class="col-sm-12">
-                    <form action="" class="text-center" method="get">
-                        <div class="form-group">
-                            <lable class="sr-only" for="help-search">查找</lable>
-                            <input type="text" class="form-control border-color col-sm-12" placeholder="城市名字">
-                        </div>
-                        <button class="btn btn-orange">
-                            <i class="fa fa-question-circle"></i>
+        <div class="container">                        
+             <form action="" name= "weatherTitle" class="form-inline text-center" method="get">
+                       <div class="input-group">
+                           <input type="text" id="help-search" class="form-control" placeholder="城市名字" aria-label="查找城市"> 
+                         <span class="input-group-btn">
+                             <button class="btn btn-default">
+                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            &nbsp;
                             <span>查找</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
+                            </button>   
+                        </span> 
+                       </div>                 
+             </form> 
             <div class="widgets">
-                <h2 class="text-center"><span class="city">武汉</span>实时天气及预报 </h2>
-                <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#current" aria-controls="current" role="tab" data-toggle="tab">当前天气</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今天天气</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气</a>
-                    </li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="current">
-                        <table id="currentWeather">
+                <h3 class="text-center">本地实时天气和天气预报 </h3>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <table id="currentWeather" class="table table-striped">
                             <tbody>
                                 <tr>
                                     <td>温度：</td>
-                                    <td class="temp"></td>
+                                    <td class="temp">122</td>
                                 </tr>
                                 <tr>
                                     <td>风向：</td>
@@ -78,8 +65,19 @@
                             </tbody>
                         </table>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="today">
-                        <table class="todayWeather">
+                    <div class="col-sm-8">
+                                        <ul class="nav nav-pills nav-justified" role="tablist">      
+                    <li role="presentation" class="active">
+                        <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今天天气</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="today">
+                        <table class="todayWeather" class="table table-striped">
                             <tbody>
                                 <tr>
                                     <td>日期</td>
@@ -137,7 +135,7 @@
                         </table>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="future">
-                        <table class="futureWeather">
+                        <table class="futureWeather" class="table table-striped">
                             <tbody>
                                 <tr class="day1">
                                     <td>第一天</td>
@@ -171,6 +169,9 @@
                         </table>
                     </div>
                 </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
