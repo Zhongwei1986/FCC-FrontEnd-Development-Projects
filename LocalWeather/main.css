@@ -37,7 +37,8 @@ ul {
 
 /*div.wraper*/
 .wraper {
-    height: 100%; 
+    height: 100%;
+    overflow: auto; 
 }
 /*div.container*/
 div.container {
@@ -53,6 +54,8 @@ input#help-search {
     margin-bottom: 25px;
 }
 
+
+
 .tab-content {
-    margin-top: 25px;
+    margin-top: 10px;
 }

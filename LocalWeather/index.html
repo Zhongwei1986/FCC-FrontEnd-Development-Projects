@@ -37,11 +37,15 @@
                        </div>                 
              </form> 
             <div class="widgets">
-                <h3 class="text-center">本地实时天气和天气预报 </h3>
+                <h3 class="text-center">实时天气和天气预报 </h3>
                 <div class="row">
                     <div class="col-sm-4">
-                        <table id="currentWeather" class="table table-striped">
-                            <tbody>
+                        <h4 class="text-center"><strong class="city">武汉</strong>&nbsp;实时天气</h4>
+                        <p id="update-time" class="text-center">
+                            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                            更新时间</p>
+                        <table id="currentWeather" class="table table-bordered">
+                            <tbody class="text-center">                               
                                 <tr>
                                     <td>温度：</td>
                                     <td class="temp">122</td>
@@ -58,123 +62,118 @@
                                     <td>湿度：</td>
                                     <td class="humidity"></td>
                                 </tr>
-                                <tr>
-                                    <td>更新时间：</td>
-                                    <td class="time"></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="col-sm-8">
-                                        <ul class="nav nav-pills nav-justified" role="tablist">      
-                    <li role="presentation" class="active">
-                        <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今天天气</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气</a>
-                    </li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="today">
-                        <table class="todayWeather" class="table table-striped">
-                            <tbody>
-                                <tr>
-                                    <td>日期</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>星期</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>温度</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>今日天气</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>风向</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>穿衣指数</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>穿衣建议</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>紫外线强度</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>舒适度指数</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>洗车指数</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>旅游指数</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>晨练指数</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>干燥指数</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="future">
-                        <table class="futureWeather" class="table table-striped">
-                            <tbody>
-                                <tr class="day1">
-                                    <td>第一天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day2">
-                                    <td>第二天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day3">
-                                    <td>第三天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day4">
-                                    <td>第四天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day5">
-                                    <td>第五天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day6">
-                                    <td>第六天</td>
-                                    <td></td>
-                                </tr>
-                                <tr class="day7">
-                                    <td>第七天</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <ul class="nav nav-pills nav-justified" role="tablist">      
+                            <li role="presentation" class="active">
+                                <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今日天气</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气  </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">                            
+                            <div role="tabpanel" class="tab-pane fade in active" id="today">
+                                
+                                    <table id="todayWeather" class="table table-bordered">
+                                    <tbody>
+                                        <tr class="well">
+                                            <td colspan="2">日期</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>星期</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>温度</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>今日天气</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>风向</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>穿衣指数</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>穿衣建议</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>紫外线强度</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>舒适度指数</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>洗车指数</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>旅游指数</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>晨练指数</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>干燥指数</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                                          
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="future">
+                                <table id="futureWeather" class="table table-bordered">
+                                    <tbody>
+                                        <tr class="day1">
+                                            <td>第一天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day2">
+                                            <td>第二天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day3">
+                                            <td>第三天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day4">
+                                            <td>第四天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day5">
+                                            <td>第五天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day6">
+                                            <td>第六天</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="day7">
+                                            <td>第七天</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
