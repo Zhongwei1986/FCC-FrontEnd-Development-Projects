@@ -2,183 +2,182 @@
 <html lang="zh-CN">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A Weather App designed for FCC FrontEnd Project">
-    <meta name="keywords" content="Weather FCC">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Simple Weather App</title>
-    <!-- Bootstrap -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">    
-    <link rel="stylesheet" href="main.css">   
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A Weather App designed for FCC FrontEnd Project">
+  <meta name="keywords" content="Weather FCC">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Simple Weather App</title>
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="main.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <div class="wraper">
-        <div class="container">                        
-             <form class="form-inline text-center">
-                       <div class="input-group">
-                           <input type="text" id="help-search" class="form-control" placeholder="城市名字" aria-label="查找城市"> 
-                         <span class="input-group-btn">
-                             <button class="btn btn-default">
-                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            &nbsp;
-                            <span>查找</span>
-                            </button>   
-                        </span> 
-                       </div>                 
-             </form> 
-            <div class="widgets">
-                <h3 class="text-center">实时天气和天气预报 </h3>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <h4 class="text-center"><strong id="city-name">武汉</strong>&nbsp;实时天气</h4>
-                        <p id="update-time" class="text-center">
-                            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-                            更新时间</p>
-                        <table id="current-weather" class="table table-bordered">
-                            <tbody class="text-center">                               
-                                <tr>
-                                    <td>温度：</td>
-                                    <td id="current-temp">122</td>
-                                </tr>
-                                <tr>
-                                    <td>风向：</td>
-                                    <td id="wind-direction"></td>
-                                </tr>
-                                <tr>
-                                    <td>风力：</td>
-                                    <td id="wind-strength"></td>
-                                </tr>
-                                <tr>
-                                    <td>湿度：</td>
-                                    <td id="humidity"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-sm-8">
-                        <ul class="nav nav-pills nav-justified" role="tablist">      
-                            <li role="presentation" class="active">
-                                <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今日天气</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气  </a>
-                            </li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">                            
-                            <div role="tabpanel" class="tab-pane fade in active" id="today">
-                                
-                                    <table id="today-weather" class="table table-bordered">
-                                    <tbody>
-                                        <tr class="well">
-                                            <td colspan="2" id="date">日期</td>                                            
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2" id="week">星期</td>                                            
-                                        </tr>
-                                        <tr>
-                                            <td>温度</td>
-                                            <td id=temperature></td>
-                                        </tr>
-                                        <tr>
-                                            <td>今日天气</td>
-                                            <td id="weather-info"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>风向</td>
-                                            <td id="wind-today"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>穿衣指数</td>
-                                            <td id="dressing-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>穿衣建议</td>
-                                            <td id="dressing-advice"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>紫外线强度</td>
-                                            <td id="uv-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>舒适度指数</td>
-                                            <td id="comfort-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>洗车指数</td>
-                                            <td id="wash-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>旅游指数</td>
-                                            <td id="travel-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>晨练指数</td>
-                                            <td id="exercise-index"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>干燥指数</td>
-                                            <td id="drying-index"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                                          
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="future">
-                                <table id="future-weather" class="table table-bordered">
-                                    <tbody>
-                                        <tr class="day1">
-                                            <td>第一天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day2">
-                                            <td>第二天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day3">
-                                            <td>第三天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day4">
-                                            <td>第四天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day5">
-                                            <td>第五天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day6">
-                                            <td>第六天</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr class="day7">
-                                            <td>第七天</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="wraper">
+    <div class="container">
+      <form class="form-inline text-center">
+        <div class="input-group">
+          <input type="text" id="help-search" class="form-control" placeholder="城市名字" aria-label="查找城市">
+          <span class="input-group-btn">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span> &nbsp;
+          <span>查找</span>
+          </button>
+          </span>
         </div>
+      </form>
+      <div class="widgets">
+        <h3 class="text-center">实时天气和天气预报 </h3>
+        <div class="row">
+          <div class="col-sm-4">
+            <h4 class="text-center"><strong id="city-name">武汉</strong>&nbsp;实时天气</h4>
+            <p id="update-time" class="text-center">
+              <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 更新时间
+            </p>
+            <table id="current-weather" class="table table-bordered">
+              <tbody class="text-center">
+                <tr>
+                  <td>温度：</td>
+                  <td id="current-temp">122</td>
+                </tr>
+                <tr>
+                  <td>风向：</td>
+                  <td id="wind-direction"></td>
+                </tr>
+                <tr>
+                  <td>风力：</td>
+                  <td id="wind-strength"></td>
+                </tr>
+                <tr>
+                  <td>湿度：</td>
+                  <td id="humidity"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-8">
+            <ul class="nav nav-pills nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#today" aria-controls="today" role="tab" data-toggle="tab">今日天气</a>
+              </li>
+              <li role="presentation">
+                <a href="#future" aria-controls="future" role="tab" data-toggle="tab">未来几日天气  </a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="today">
+
+                <table id="today-weather" class="table table-bordered">
+                  <tbody>
+                    <tr class="well">
+                      <td colspan="2" id="date">日期</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" id="week">星期</td>
+                    </tr>
+                    <tr>
+                      <td>温度</td>
+                      <td id="temperature"></td>
+                    </tr>
+                    <tr>
+                      <td>今日天气</td>
+                      <td id="weather-info"></td>
+                    </tr>
+                    <tr>
+                      <td>风向</td>
+                      <td id="wind-today"></td>
+                    </tr>
+                    <tr>
+                      <td>穿衣指数</td>
+                      <td id="dressing-index"></td>
+                    </tr>
+                    <tr>
+                      <td>穿衣建议</td>
+                      <td id="dressing-advice"></td>
+                    </tr>
+                    <tr>
+                      <td>紫外线强度</td>
+                      <td id="uv-index"></td>
+                    </tr>
+                    <tr>
+                      <td>舒适度指数</td>
+                      <td id="comfort-index"></td>
+                    </tr>
+                    <tr>
+                      <td>洗车指数</td>
+                      <td id="wash-index"></td>
+                    </tr>
+                    <tr>
+                      <td>旅游指数</td>
+                      <td id="travel-index"></td>
+                    </tr>
+                    <tr>
+                      <td>晨练指数</td>
+                      <td id="exercise-index"></td>
+                    </tr>
+                    <tr>
+                      <td>干燥指数</td>
+                      <td id="drying-index"></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="future">
+                <table id="future-weather" class="table table-bordered">
+                  <tbody>
+                    <tr class="day1">
+                      <td>第一天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day2">
+                      <td>第二天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day3">
+                      <td>第三天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day4">
+                      <td>第四天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day5">
+                      <td>第五天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day6">
+                      <td>第六天</td>
+                      <td></td>
+                    </tr>
+                    <tr class="day7">
+                      <td>第七天</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
