@@ -1,6 +1,8 @@
 //数据填充
 
 //天气信息相关DOM
+var $citySearch = $('#city-search');
+var $searchBtn = $('#search-btn');
 var $cityName = $('#city-name');
 var $updateTime = $('#update-time');
 var $currenTemp = $('#current-temp');
@@ -20,16 +22,19 @@ var travelIndex = $('#travel-index');
 var exerciseIndex = $('#exercise-index');
 var dryingIndex = $('#drying-index');
 
-//update DOM elements' text
-//@param  el  [Object]   DOM elements
-//@param  str [String]   text for the element's content
+
+
+/**
+ * updateText 更新DOM节点的文本
+ * 
+ * @param {Object} el
+ * @param {String} str
+ */
 function updateText(el, str) {
   el.text(str);
 }
 
-//DOM ready操作
-$(function() {
+$searchBtn.on('click', function() {
   var url = "http://v.juhe.cn/weather/index";
-  var city = '武汉';
-
+  var cityName;
 });

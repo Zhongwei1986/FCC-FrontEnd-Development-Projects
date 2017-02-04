@@ -21,3 +21,6 @@
 * 计划后期重构此APP，参考douyuTv、acfun等网站增加新的弹幕功能，比如设置透明度，只显示某区域弹幕，完全屏蔽弹幕等。
 
 ## 3. Build a Random Quote Machine - 创建名人名言随机生成器
+* [英文名言随机生成APP](https://codepen.io/Zhongwei1986/full/WGAZJE/)
+
+## 4. Weather APP-全国天气APP
