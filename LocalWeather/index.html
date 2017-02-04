@@ -24,7 +24,7 @@
 <body>
     <div class="wraper">
         <div class="container">                        
-             <form action="" name= "weatherTitle" class="form-inline text-center" method="get">
+             <form class="form-inline text-center">
                        <div class="input-group">
                            <input type="text" id="help-search" class="form-control" placeholder="城市名字" aria-label="查找城市"> 
                          <span class="input-group-btn">
@@ -40,27 +40,27 @@
                 <h3 class="text-center">实时天气和天气预报 </h3>
                 <div class="row">
                     <div class="col-sm-4">
-                        <h4 class="text-center"><strong class="city">武汉</strong>&nbsp;实时天气</h4>
+                        <h4 class="text-center"><strong id="city-name">武汉</strong>&nbsp;实时天气</h4>
                         <p id="update-time" class="text-center">
                             <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
                             更新时间</p>
-                        <table id="currentWeather" class="table table-bordered">
+                        <table id="current-weather" class="table table-bordered">
                             <tbody class="text-center">                               
                                 <tr>
                                     <td>温度：</td>
-                                    <td class="temp">122</td>
+                                    <td id="current-temp">122</td>
                                 </tr>
                                 <tr>
                                     <td>风向：</td>
-                                    <td class="wind_direction"></td>
+                                    <td id="wind-direction"></td>
                                 </tr>
                                 <tr>
                                     <td>风力：</td>
-                                    <td class="wind_strength"></td>
+                                    <td id="wind-strength"></td>
                                 </tr>
                                 <tr>
                                     <td>湿度：</td>
-                                    <td class="humidity"></td>
+                                    <td id="humidity"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -78,65 +78,64 @@
                         <div class="tab-content">                            
                             <div role="tabpanel" class="tab-pane fade in active" id="today">
                                 
-                                    <table id="todayWeather" class="table table-bordered">
+                                    <table id="today-weather" class="table table-bordered">
                                     <tbody>
                                         <tr class="well">
-                                            <td colspan="2">日期</td>                                            
+                                            <td colspan="2" id="date">日期</td>                                            
                                         </tr>
                                         <tr>
-                                            <td>星期</td>
-                                            <td></td>
+                                            <td colspan="2" id="week">星期</td>                                            
                                         </tr>
                                         <tr>
                                             <td>温度</td>
-                                            <td></td>
+                                            <td id=temperature></td>
                                         </tr>
                                         <tr>
                                             <td>今日天气</td>
-                                            <td></td>
+                                            <td id="weather-info"></td>
                                         </tr>
                                         <tr>
                                             <td>风向</td>
-                                            <td></td>
+                                            <td id="wind-today"></td>
                                         </tr>
                                         <tr>
                                             <td>穿衣指数</td>
-                                            <td></td>
+                                            <td id="dressing-index"></td>
                                         </tr>
                                         <tr>
                                             <td>穿衣建议</td>
-                                            <td></td>
+                                            <td id="dressing-advice"></td>
                                         </tr>
                                         <tr>
                                             <td>紫外线强度</td>
-                                            <td></td>
+                                            <td id="uv-index"></td>
                                         </tr>
                                         <tr>
                                             <td>舒适度指数</td>
-                                            <td></td>
+                                            <td id="comfort-index"></td>
                                         </tr>
                                         <tr>
                                             <td>洗车指数</td>
-                                            <td></td>
+                                            <td id="wash-index"></td>
                                         </tr>
                                         <tr>
                                             <td>旅游指数</td>
-                                            <td></td>
+                                            <td id="travel-index"></td>
                                         </tr>
                                         <tr>
                                             <td>晨练指数</td>
-                                            <td></td>
+                                            <td id="exercise-index"></td>
                                         </tr>
                                         <tr>
                                             <td>干燥指数</td>
-                                            <td></td>
+                                            <td id="drying-index"></td>
                                         </tr>
                                     </tbody>
                                 </table>
                                                           
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="future">
-                                <table id="futureWeather" class="table table-bordered">
+                                <table id="future-weather" class="table table-bordered">
                                     <tbody>
                                         <tr class="day1">
                                             <td>第一天</td>
@@ -179,6 +178,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
