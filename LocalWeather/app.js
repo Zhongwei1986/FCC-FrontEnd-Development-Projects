@@ -122,7 +122,7 @@ function getWeatherByCityName(cityname) {
 function checkCityName() {
   var cityname = $('#city-input').val();
   if (cities.indexOf(cityname)) {
-    return ture;
+    return true;
   } else {
     return false;
   }
@@ -130,31 +130,32 @@ function checkCityName() {
 
 //绑定点击事件
 $('#search-btn').on('click', function() {
+  e.preventDefault();
   if (cities.length === 0) {
-    getCityResults();
+    // getCityResults();
     console.log('test4');
   }
-  if (checkCityName()) {
-    console.log('test2');
-    updateText($cityName, cityname);
-    getWeatherByCityName(cityname);
-    $('.widgets').css('display', 'block');
-  } else {
-    $('#error-prompt').css('display', 'block')
-      .text('无此城市天气信息，请检查您的输入!');
-  }
+  // if (checkCityName()) {
+  //   console.log('test2');
+  //   // updateText($cityName, cityname);
+  //   // getWeatherByCityName(cityname);
+  //   // $('.widgets').css('display', 'block');
+  // } else {
+  //   $('#error-prompt').css('display', 'block')
+  //     .text('无此城市天气信息，请检查您的输入!');
+  // }
 });
 
 //监控键盘
-$(window).keydown(function(event) {
-  if (event.which === 13) {
-    if (checkCityName()) {
-      updateText($cityName, cityname);
-      getWeatherByCityName(cityname);
-      $('.widgets').css('display', 'block');
-    } else {
-      $('#error-prompt').css('display', 'block')
-        .text('无此城市天气信息，请检查您的输入!');
-    }
-  }
-})
+// $(window).keydown(function(event) {
+//   if (event.which === 13) {
+//     if (checkCityName()) {
+//       updateText($cityName, cityname);
+//       getWeatherByCityName(cityname);
+//       $('.widgets').css('display', 'block');
+//     } else {
+//       $('#error-prompt').css('display', 'block')
+//         .text('无此城市天气信息，请检查您的输入!');
+//     }
+//   }
+// });
