@@ -51,7 +51,7 @@ div.container {
 }
 
 div.widgets {
-  /*display: none;*/
+  display: none;
 }
 
 input#help-search {
@@ -65,4 +65,10 @@ input#help-search {
 
 .tab-content {
   margin-top: 10px;
+}
+
+#error-prompt {
+  display: none;
+  font-size: 30px;
+  margin-top: 50px;
 }

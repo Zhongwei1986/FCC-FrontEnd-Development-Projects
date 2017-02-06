@@ -26,7 +26,7 @@
     <div class="container">
       <form class="form-inline text-center">
         <div class="input-group">
-          <input type="text" id="city-search" class="form-control" placeholder="城市名字" aria-label="查找城市">
+          <input type="text" id="city-input" class="form-control" placeholder="城市名字" aria-label="查找城市">
           <span class="input-group-btn">
             <button id="search-btn" class="btn btn-default">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span> &nbsp;
@@ -80,10 +80,10 @@
                 <table id="today-weather" class="table table-bordered">
                   <tbody>
                     <tr class="well">
-                      <td colspan="2" id="date">日期</td>
+                      <td colspan="2" id="date"></td>
                     </tr>
                     <tr>
-                      <td colspan="2" id="week">星期</td>
+                      <td colspan="2" id="week"></td>
                     </tr>
                     <tr>
                       <td>温度：</td>
@@ -94,7 +94,7 @@
                       <td id="weather"></td>
                     </tr>
                     <tr>
-                      <td>风向：</td>
+                      <td>风向风力：</td>
                       <td id="wind-today"></td>
                     </tr>
                     <tr>
@@ -134,35 +134,35 @@
 
               </div>
               <div role="tabpanel" class="tab-pane fade" id="future">
-                <table id="future-weather" class="table table-bordered">
+                <table id="future-weather" class="table table-bordered text-center">
                   <tbody>
-                    <tr class="day1">
-                      <td>第一天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day2">
-                      <td>第二天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day3">
-                      <td>第三天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day4">
-                      <td>第四天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day5">
-                      <td>第五天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day6">
-                      <td>第六天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
-                    <tr class="day7">
-                      <td>第七天</td>
-                      <td></td>
+                    <tr class="well">
+                      <td class="future-date"></td>
+                      <td class="future-week"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -170,6 +170,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="text-center">
+        <p id="error-prompt"></p>
       </div>
     </div>
   </div>
