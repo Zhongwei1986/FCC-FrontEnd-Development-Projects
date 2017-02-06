@@ -3,17 +3,29 @@ var $window = $(window);
 var $citySearch = $('#city-search');
 var $searchBtn = $('#search-btn');
 var $cityName = $('#city-name');
-var $currentWeatherArr = [
-  $('#current-temp'), $('#wind-direction'), $('#wind-strength'),
-  $('#humidity'), $('#update-time'),
-];
-var $todayWeatherArr = [
-  $("#date"), $("#date"), $("#temperature"),
-  $('#weather-info'), $('#wind-today'), $('#dressing-index'),
-  $('#dressing-advice'), $('#uv-index'), $('#comfort-index'),
-  $('#wash-index'), $('#travel-index'), $('#exercise-index'),
+var $currentWeatherArr = {
+  temp: $('#current-temp'),
+  wind_direction: $('#wind-direction'),
+  wind_strength: $('#wind-strength'),
+  humidity: $('#humidity'),
+  time: $('#update-time')
+};
+
+var $todayWeatherArr = {
+  $("#date"),
+  $("#week"),
+  $("#temperature"),
+  $('#weather-info'),
+  $('#wind-today'),
+  $('#dressing-index'),
+  $('#dressing-advice'),
+  $('#uv-index'),
+  $('#comfort-index'),
+  $('#wash-index'),
+  $('#travel-index'),
+  $('#exercise-index'),
   $('#drying-index')
-];
+};
 var appkey = '3e71af0ff0937226f9690f000ce27c3f';
 var cities = [];
 
@@ -51,12 +63,9 @@ function getWeatherByCityName(cityname) {
   cityname = encodeURI(cityname);
   var getUrl = api + '?format=2&cityname=' + cityname + "&key=" + appkey;
   $.getJSON(getUrl, function(data) {
-      data = JSON.parse(data);
-      var currentWeather = data.result.sk;
-      var todayWeather = data.result.today;
-      var futureWeather = data.result.future;
-      for (var i = 0, max = currentWeather.length; i < max; i++) {
-        updateText($currentWeatherArr[i], currentWeather[index]
-        }
-      });
-  }
+        data = JSON.parse(data);
+        var currentWeather = data.result.sk;
+        var todayWeather = data.result.today;
+        var futureWeather = data.result.future;
+
+      }
