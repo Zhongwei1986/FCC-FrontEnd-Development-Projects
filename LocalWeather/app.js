@@ -9,9 +9,9 @@ function getCityResults() {
   var juheUrl = "http://v.juhe.cn/weather/citys";
   var getUrl = juheUrl + "?dtype=&key=" + appkey + "&callback=?";
   $.getJSON(getUrl, function(response) {
-    console.log(response);
+    // console.log(response);
     $.each(response.result, function(i, e) {
-      if ($.inArray(e, cities) === -1) {
+      if ($.inArray(e.city, cities) === -1) {
         cities.push(e.city);
       }
     });
@@ -128,21 +128,21 @@ function checkCityName() {
   }
 }
 
-//初始化
-$(function() {
-  getCityResults();
-  $('#search-btn').on('click', function(e) {
-    if (checkCityName()) {
-      updateText($cityName, cityname);
-      getWeatherByCityName(cityname);
-      $('.widgets').css('display', 'block');
-    } else {
-      $('#error-prompt').css('display', 'block')
-        .text('无此城市天气信息，请检查您的输入!');
-    }
-  });
+$('#search-btn').on('click', function() {
+  if (cities.length === 0) {
+    getCityResults();
+    console.log('test4');
+  }
+  if (checkCityName()) {
+    console.log('test2');
+    updateText($cityName, cityname);
+    getWeatherByCityName(cityname);
+    $('.widgets').css('display', 'block');
+  } else {
+    $('#error-prompt').css('display', 'block')
+      .text('无此城市天气信息，请检查您的输入!');
+  }
 });
-
 
 //监控键盘
 $(window).keydown(function(event) {
