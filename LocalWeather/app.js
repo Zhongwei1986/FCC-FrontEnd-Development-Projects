@@ -128,6 +128,7 @@ function checkCityName() {
   }
 }
 
+//绑定点击事件
 $('#search-btn').on('click', function() {
   if (cities.length === 0) {
     getCityResults();
