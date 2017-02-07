@@ -44,8 +44,8 @@ function updateCurrentWeather(currentWeather) {
     humidity: $('#humidity'),
     time: $('#update-time')
   };
-  for (var key in currentWeather) {
-    updateText($currentWeatherArr.key, currentWeather.key);
+  for (var key in $currentWeatherArr) {
+    updateText($currentWeatherArr[key], currentWeather[key]);
   }
 }
 
@@ -70,8 +70,8 @@ function updateTodayWeather(todayWeather) {
     exercise_index: $('#exercise-index'),
     drying_index: $('#drying-index')
   };
-  for (var key in todayWeather) {
-    updateText($todayWeatherArr.key, todayWeather.key);
+  for (var key in $todayWeatherArr) {
+    updateText($todayWeatherArr[key], todayWeather[key]);
   }
 }
 
@@ -82,10 +82,13 @@ function updateTodayWeather(todayWeather) {
  */
 function updateFutureWeather(futureWeather) {
   var $futureArr = $('#future-weather .well');
-  for (var i = 0, max = futureWeather.length; i < max; i++) {
-    var dayWeather = futureWeather[i];
+  var dayWeather;
+  for (var i = 0, max = $futureArr.length; i < max; i++) {
+    dayWeather = futureWeather[i];
     var $el = $($futureArr[i]);
-    $el.children('.future-date').text(dayWeather.date);
+    var date = dayWeather.date;
+    date = date.slice(0, 4) + '年' + date.slice(4, 6) + '月' + date.slice(6, 8) + '日';
+    $el.children('.future-date').text(date);
     $el.children('.future-week').text(dayWeather.week);
     $el.after(
       '<tr><td>温度：</td><td>' + dayWeather.temperature + '</td></tr>' +
@@ -119,43 +122,31 @@ function getWeatherByCityName(cityname) {
  * 
  * @returns
  */
-function checkCityName() {
-  var cityname = $('#city-input').val();
-  if (cities.indexOf(cityname)) {
+function checkCityName(cityname) {
+  if (cities.indexOf(cityname) !== -1) {
     return true;
   } else {
     return false;
   }
 }
 
-//绑定点击事件
-$('#search-btn').on('click', function() {
-  e.preventDefault();
-  if (cities.length === 0) {
-    // getCityResults();
-    console.log('test4');
-  }
-  // if (checkCityName()) {
-  //   console.log('test2');
-  //   // updateText($cityName, cityname);
-  //   // getWeatherByCityName(cityname);
-  //   // $('.widgets').css('display', 'block');
-  // } else {
-  //   $('#error-prompt').css('display', 'block')
-  //     .text('无此城市天气信息，请检查您的输入!');
-  // }
+//绑定form的submit事件
+$(function() {
+  getCityResults();
+  console.log('test22');
+  $('#search-form').on('submit', function(e) {
+    var cityname = $('#city-input').val();
+    e.preventDefault();
+    if (checkCityName(cityname)) {
+      $('#city-name').text(cityname);
+      getWeatherByCityName(cityname);
+      $('.widgets').css('display', 'block');
+      console.log('test4');
+    } else {
+      $('#error-prompt').css('display', 'block')
+        .text('无此城市天气信息，请检查您的输入!').fadeOut(1000);
+      // $('#error-prompt').fadeOut(1000);
+    }
+    $('#city-input').val('');
+  });
 });
-
-//监控键盘
-// $(window).keydown(function(event) {
-//   if (event.which === 13) {
-//     if (checkCityName()) {
-//       updateText($cityName, cityname);
-//       getWeatherByCityName(cityname);
-//       $('.widgets').css('display', 'block');
-//     } else {
-//       $('#error-prompt').css('display', 'block')
-//         .text('无此城市天气信息，请检查您的输入!');
-//     }
-//   }
-// });
