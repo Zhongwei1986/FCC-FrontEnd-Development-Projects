@@ -133,7 +133,6 @@ function checkCityName(cityname) {
 //绑定form的submit事件
 $(function() {
   getCityResults();
-  console.log('test22');
   $('#search-form').on('submit', function(e) {
     var cityname = $('#city-input').val();
     e.preventDefault();
@@ -141,11 +140,15 @@ $(function() {
       $('#city-name').text(cityname);
       getWeatherByCityName(cityname);
       $('.widgets').css('display', 'block');
-      console.log('test4');
     } else {
-      $('#error-prompt').css('display', 'block')
-        .text('无此城市天气信息，请检查您的输入!').fadeOut(2000);
-      // $('#error-prompt').fadeOut(1000);
+      if ($('.widgets').css('display') === 'block') {
+        $('.widgets').css('display', 'none');
+        $('#error-prompt').css('display', 'block')
+          .text('无此城市天气信息，请检查您的输入!').fadeOut(2000);
+      } else {
+        $('#error-prompt').css('display', 'block')
+          .text('无此城市天气信息，请检查您的输入!').fadeOut(2000);
+      }
     }
     $('#city-input').val('');
   });
