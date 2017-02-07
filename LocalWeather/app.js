@@ -144,7 +144,7 @@ $(function() {
       console.log('test4');
     } else {
       $('#error-prompt').css('display', 'block')
-        .text('无此城市天气信息，请检查您的输入!').fadeOut(1000);
+        .text('无此城市天气信息，请检查您的输入!').fadeOut(2000);
       // $('#error-prompt').fadeOut(1000);
     }
     $('#city-input').val('');
